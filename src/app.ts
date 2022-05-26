@@ -1,10 +1,12 @@
 // Supports ES6
-import { create, Whatsapp } from 'venom-bot';
+import { create } from 'venom-bot';
 
 const { NlpManager } = require('node-nlp');
-
 const manager = new NlpManager({ languages: ['pt'], forceNER: true });
-// Adds the utterances and intents for the NLP
+
+const red = '\u001b[31m';
+const green = '\u001b[32m';
+const reset = '\u001b[0m';
 
 // Treino de saudação
 manager.addDocument('pt', 'ola', 'SAUDAÇÃO');
@@ -23,6 +25,9 @@ manager.addDocument('pt', 'seu email', 'EMAIL');
 manager.addDocument('pt', 'seu github', 'GITHUB');
 manager.addDocument('pt', 'seu instagram', 'INSTAGRAM');
 manager.addDocument('pt', 'seu linkedin', 'LINKEDIN');
+
+// Fun Thinks
+manager.addDocument('pt', '!sticker', 'STICKER');
 
 // Treino de resposta
 manager.addAnswer(
@@ -49,6 +54,11 @@ manager.addAnswer(
   'LINKEDIN',
   'Oi, meu *Linkedin* é este\nhttps://www.linkedin.com/in/c%C3%A9sar-et%C3%A3-cardoso-de-almeida-9968b878/'
 );
+manager.addAnswer(
+  'pt',
+  'STICKER',
+  'Estou preparando o seu *sticker*.\n😉'
+);
 
 // Treinar e salvar no modelo
 (async () => {
@@ -59,14 +69,45 @@ manager.addAnswer(
       .then((client) => {
         //Evento
         client.onMessage(async (message) => {
-          if (message.isGroupMsg === false) {
+
+          console.log(`
+            ${green}Remetente:${reset}          ${message.chat.contact.name}
+            ${green}Tipo:${reset} ${message.type}
+          `);
+
+          await client.sendSeen(message.from)
+          await client.startTyping(message.from)
+          if (message.isGroupMsg === false && message.type === 'chat') {
+            
             const response = await manager.process(
               'pt',
               message.body.toLowerCase()
             );
-            console.log(`Mensagem recebida: ${response.utterance} indentificada como ${response.intent} com score de ${response.score}`);
-            client.sendText(message.from, response.answer);
+            
+            console.log(`
+              ${green}Score de:${reset}           ${response.score}
+            `);
+            
+            //Linha de comando para utilizar o module Nlp
+            (response.intent === 'None') ? client.sendText(message.from, 'Desculpa, estou off mais tarde respondo.') : client.sendText(message.from, response.answer);
+          
           }
+
+          if (message.body === '!sticker' && message.isGroupMsg === false && message.type === 'video') {
+            await client
+              .sendImageAsStickerGif(message.from, './image.gif')
+              .then((result) => {
+                console.log('Result: ', result); //return object success
+              })
+              .catch((erro) => {
+                console.error('Error when sending: ', erro); //return object error
+              });
+          }
+
+          if (message.isGroupMsg === false && message.type === 'ptt') {
+            client.sendText(message.from, 'Já escuto seu audio. 😉');
+          }
+          await client.stopTyping(message.from)
         });
       })
       .catch((erro) => {
