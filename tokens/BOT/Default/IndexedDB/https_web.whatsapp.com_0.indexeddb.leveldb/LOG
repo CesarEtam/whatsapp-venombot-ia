@@ -1,0 +1,27 @@
+2022/05/25-21:02:02.715 3598 Reusing MANIFEST C:\Users\cesar\Venom-Bot\tokens\BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/05/25-21:02:02.715 3598 Recovering log #1203
+2022/05/25-21:02:02.717 3598 Reusing old log C:\Users\cesar\Venom-Bot\tokens\BOT\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001203.log 
+2022/05/25-21:02:13.078 9870 Compacting 1@1 + 10@2 files
+2022/05/25-21:02:13.154 9870 Generated table #1220@1: 24940 keys, 2278204 bytes
+2022/05/25-21:02:13.230 9870 Generated table #1221@1: 24970 keys, 2277444 bytes
+2022/05/25-21:02:13.296 9870 Generated table #1222@1: 25500 keys, 2269554 bytes
+2022/05/25-21:02:13.336 9870 Generated table #1223@1: 10334 keys, 2142405 bytes
+2022/05/25-21:02:13.370 9870 Generated table #1224@1: 7582 keys, 2130175 bytes
+2022/05/25-21:02:13.404 9870 Generated table #1225@1: 8067 keys, 2129961 bytes
+2022/05/25-21:02:13.452 9870 Generated table #1226@1: 69967 keys, 2209480 bytes
+2022/05/25-21:02:13.510 9870 Generated table #1227@1: 106460 keys, 2258113 bytes
+2022/05/25-21:02:13.569 9870 Generated table #1228@1: 106655 keys, 2258035 bytes
+2022/05/25-21:02:13.615 9870 Generated table #1229@1: 89783 keys, 1930423 bytes
+2022/05/25-21:02:13.616 9870 Compacted 1@1 + 10@2 files => 21883794 bytes
+2022/05/25-21:02:13.618 9870 compacted to: files[ 0 1 27 0 0 0 0 ]
+2022/05/25-21:02:13.618 9870 Delete type=2 #1192
+2022/05/25-21:02:13.618 9870 Delete type=2 #1193
+2022/05/25-21:02:13.618 9870 Delete type=2 #1194
+2022/05/25-21:02:13.618 9870 Delete type=2 #1195
+2022/05/25-21:02:13.618 9870 Delete type=2 #1196
+2022/05/25-21:02:13.618 9870 Delete type=2 #1197
+2022/05/25-21:02:13.618 9870 Delete type=2 #1198
+2022/05/25-21:02:13.618 9870 Delete type=2 #1199
+2022/05/25-21:02:13.618 9870 Delete type=2 #1200
+2022/05/25-21:02:13.618 9870 Delete type=2 #1201
+2022/05/25-21:02:13.619 9870 Delete type=2 #1206

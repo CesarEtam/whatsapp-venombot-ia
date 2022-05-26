@@ -1,0 +1,576 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "pt"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "locale": "pt",
+          "trainByDomain": false,
+          "tag": "domain-manager-pt",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "ola": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "oi": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "bom,dia": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "boa,tard": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "boa,noit": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "coe,viad": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "coe": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "fal,tu": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "ae,e": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "bom,tud": {
+            "intent": "SAUDAÇÃO",
+            "domain": "default"
+          },
+          "email,seu": {
+            "intent": "EMAIL",
+            "domain": "default"
+          },
+          "github,seu": {
+            "intent": "GITHUB",
+            "domain": "default"
+          },
+          "instagr,seu": {
+            "intent": "INSTAGRAM",
+            "domain": "default"
+          },
+          "linkedin,seu": {
+            "intent": "LINKEDIN",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "SAUDAÇÃO": "default",
+          "EMAIL": "default",
+          "GITHUB": "default",
+          "INSTAGRAM": "default",
+          "LINKEDIN": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "ola",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "oi",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "bom dia",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "boa tarde",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "boa noite",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "coe viado",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "coe",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "fala tu",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "e ae",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "tudo bom",
+            "intent": "SAUDAÇÃO"
+          },
+          {
+            "domain": "default",
+            "utterance": "seu email",
+            "intent": "EMAIL"
+          },
+          {
+            "domain": "default",
+            "utterance": "seu github",
+            "intent": "GITHUB"
+          },
+          {
+            "domain": "default",
+            "utterance": "seu instagram",
+            "intent": "INSTAGRAM"
+          },
+          {
+            "domain": "default",
+            "utterance": "seu linkedin",
+            "intent": "LINKEDIN"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "pt",
+              "tag": "nlu-pt",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "ola": 1,
+              "oi": 1,
+              "bom": 1,
+              "dia": 1,
+              "boa": 1,
+              "tard": 1,
+              "noit": 1,
+              "coe": 1,
+              "viad": 1,
+              "fal": 1,
+              "tu": 1,
+              "e": 1,
+              "ae": 1,
+              "tud": 1,
+              "seu": 1,
+              "email": 1,
+              "github": 1,
+              "instagr": 1,
+              "linkedin": 1
+            },
+            "intents": {
+              "SAUDAÇÃO": 1,
+              "EMAIL": 1,
+              "GITHUB": 1,
+              "INSTAGRAM": 1,
+              "LINKEDIN": 1
+            },
+            "intentFeatures": {
+              "SAUDAÇÃO": {
+                "ola": 1,
+                "oi": 1,
+                "bom": 1,
+                "dia": 1,
+                "boa": 1,
+                "tard": 1,
+                "noit": 1,
+                "coe": 1,
+                "viad": 1,
+                "fal": 1,
+                "tu": 1,
+                "e": 1,
+                "ae": 1,
+                "tud": 1
+              },
+              "EMAIL": {
+                "seu": 1,
+                "email": 1
+              },
+              "GITHUB": {
+                "seu": 1,
+                "github": 1
+              },
+              "INSTAGRAM": {
+                "seu": 1,
+                "instagr": 1
+              },
+              "LINKEDIN": {
+                "seu": 1,
+                "linkedin": 1
+              }
+            },
+            "featuresToIntent": {
+              "ola": [
+                "SAUDAÇÃO"
+              ],
+              "oi": [
+                "SAUDAÇÃO"
+              ],
+              "bom": [
+                "SAUDAÇÃO"
+              ],
+              "dia": [
+                "SAUDAÇÃO"
+              ],
+              "boa": [
+                "SAUDAÇÃO"
+              ],
+              "tard": [
+                "SAUDAÇÃO"
+              ],
+              "noit": [
+                "SAUDAÇÃO"
+              ],
+              "coe": [
+                "SAUDAÇÃO"
+              ],
+              "viad": [
+                "SAUDAÇÃO"
+              ],
+              "fal": [
+                "SAUDAÇÃO"
+              ],
+              "tu": [
+                "SAUDAÇÃO"
+              ],
+              "e": [
+                "SAUDAÇÃO"
+              ],
+              "ae": [
+                "SAUDAÇÃO"
+              ],
+              "tud": [
+                "SAUDAÇÃO"
+              ],
+              "seu": [
+                "EMAIL",
+                "GITHUB",
+                "INSTAGRAM",
+                "LINKEDIN"
+              ],
+              "email": [
+                "EMAIL"
+              ],
+              "github": [
+                "GITHUB"
+              ],
+              "instagr": [
+                "INSTAGRAM"
+              ],
+              "linkedin": [
+                "LINKEDIN"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "pt",
+                "tag": "nlu-pt",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "ola",
+                "oi",
+                "bom",
+                "dia",
+                "boa",
+                "tard",
+                "noit",
+                "coe",
+                "viad",
+                "fal",
+                "tu",
+                "e",
+                "ae",
+                "tud",
+                "seu",
+                "email",
+                "github",
+                "instagr",
+                "linkedin"
+              ],
+              "intents": [
+                "SAUDAÇÃO",
+                "EMAIL",
+                "GITHUB",
+                "INSTAGRAM",
+                "LINKEDIN"
+              ],
+              "perceptrons": [
+                [
+                  4.929536819458008,
+                  4.948991298675537,
+                  3.314971923828125,
+                  1.6676291227340698,
+                  3.315913200378418,
+                  1.6596919298171997,
+                  1.6573344469070435,
+                  4.63624382019043,
+                  0.5618507266044617,
+                  2.48921799659729,
+                  2.48921799659729,
+                  2.4899253845214844,
+                  2.4899253845214844,
+                  1.6487274169921875,
+                  -7.494323253631592,
+                  -1.9679241180419922,
+                  -1.860016107559204,
+                  -1.8251949548721313,
+                  -1.8120986223220825,
+                  9.32128328548169
+                ],
+                [
+                  -0.34245622158050537,
+                  -0.3409327566623688,
+                  -0.24172763526439667,
+                  -0.1291835606098175,
+                  -0.24198763072490692,
+                  -0.12180572003126144,
+                  -0.11321279406547546,
+                  -0.3429497480392456,
+                  -0.11557333916425705,
+                  -0.174016535282135,
+                  -0.174016535282135,
+                  -0.17399565875530243,
+                  -0.17399565875530243,
+                  -0.1062370240688324,
+                  2.566401958465576,
+                  11.098039627075195,
+                  -2.8619141578674316,
+                  -2.852649211883545,
+                  -2.82507586479187,
+                  0.349232815881445
+                ],
+                [
+                  -0.33814555406570435,
+                  -0.3369485139846802,
+                  -0.2583526372909546,
+                  -0.1437813639640808,
+                  -0.26655033230781555,
+                  -0.1355338841676712,
+                  -0.12251277267932892,
+                  -0.33961424231529236,
+                  -0.1286480873823166,
+                  -0.17742149531841278,
+                  -0.17742149531841278,
+                  -0.17615105211734772,
+                  -0.17615105211734772,
+                  -0.10793066769838333,
+                  2.583635091781616,
+                  -2.807879686355591,
+                  11.099379539489746,
+                  -2.860383987426758,
+                  -2.8510429859161377,
+                  0.34075075457192455
+                ],
+                [
+                  -0.32959091663360596,
+                  -0.32692116498947144,
+                  -0.2813567519187927,
+                  -0.15379877388477325,
+                  -0.2914011776447296,
+                  -0.1454012244939804,
+                  -0.13081978261470795,
+                  -0.34434789419174194,
+                  -0.13781385123729706,
+                  -0.18827933073043823,
+                  -0.18827933073043823,
+                  -0.18505382537841797,
+                  -0.18505382537841797,
+                  -0.11408452689647675,
+                  2.6055479049682617,
+                  -2.8347041606903076,
+                  -2.8043389320373535,
+                  11.103036880493164,
+                  -2.8567287921905518,
+                  0.3212371344281139
+                ],
+                [
+                  -0.33653366565704346,
+                  -0.33016273379325867,
+                  -0.31021198630332947,
+                  -0.17020195722579956,
+                  -0.32219260931015015,
+                  -0.16090255975723267,
+                  -0.14475126564502716,
+                  -0.3653504550457001,
+                  -0.15252453088760376,
+                  -0.20164620876312256,
+                  -0.20164620876312256,
+                  -0.19760340452194214,
+                  -0.19760340452194214,
+                  -0.12550178170204163,
+                  2.640042543411255,
+                  -2.837306022644043,
+                  -2.8267312049865723,
+                  -2.7964370250701904,
+                  11.11074447631836,
+                  0.28002677720278846
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "pt",
+        "ola"
+      ],
+      [
+        "pt",
+        "oi"
+      ],
+      [
+        "pt",
+        "bom dia"
+      ],
+      [
+        "pt",
+        "boa tarde"
+      ],
+      [
+        "pt",
+        "boa noite"
+      ],
+      [
+        "pt",
+        "coe viado"
+      ],
+      [
+        "pt",
+        "coe"
+      ],
+      [
+        "pt",
+        "fala tu"
+      ],
+      [
+        "pt",
+        "e ae"
+      ],
+      [
+        "pt",
+        "tudo bom"
+      ],
+      [
+        "pt",
+        "seu email"
+      ],
+      [
+        "pt",
+        "seu github"
+      ],
+      [
+        "pt",
+        "seu instagram"
+      ],
+      [
+        "pt",
+        "seu linkedin"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "pt": {
+        "SAUDAÇÃO": [
+          {
+            "answer": "Oi! Estou trabalhando em um *assistente virtual*.\nJá te respondo! 😉"
+          }
+        ],
+        "EMAIL": [
+          {
+            "answer": "Oi, meu *E-mail* é este\ncesar.etam@hotmail.com"
+          }
+        ],
+        "GITHUB": [
+          {
+            "answer": "Oi, meu repositório no *GitHub* é este\nhttps://github.com/CesarEtam"
+          }
+        ],
+        "INSTAGRAM": [
+          {
+            "answer": "Oi, meu *Instagram* é este\nhttps://www.instagram.com/0uroborusoficial/"
+          }
+        ],
+        "LINKEDIN": [
+          {
+            "answer": "Oi, meu *Linkedin* é este\nhttps://www.linkedin.com/in/c%C3%A9sar-et%C3%A3-cardoso-de-almeida-9968b878/"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
